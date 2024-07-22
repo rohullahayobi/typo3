@@ -19,7 +19,7 @@ cd typo3
 ### 2. Build and Run the Containers
 
 ```bash
-docker-compose up --build
+docker-compose build
 docker-compose up -d
 ```
 
@@ -55,4 +55,4 @@ docker-compose down
 
 - The Typo3 source code has been take from the official [website](https://get.typo3.org/version/12)
 - Ensure that ports 8080 (for TYPO3) and 3306 (for MySQL) are available on your machine.
-- Customize the typo3 source code by modifying files in the ./typo3 directory.
+- Customize the typo3 source code by modifying files in the `src` directory.
