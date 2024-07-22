@@ -1,0 +1,27 @@
+services:
+  typo3:
+    build: .
+    ports:
+      - "8080:80"
+    environment:
+      - TYPO3_DB_HOST=db
+      - TYPO3_DB_USER=typo3
+      - TYPO3_DB_PASSWORD=typo3_password
+      - TYPO3_DB_NAME=typo3
+    volumes:
+      - ./typo3:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: typo3
+      MYSQL_USER: typo3
+      MYSQL_PASSWORD: typo3_password
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
