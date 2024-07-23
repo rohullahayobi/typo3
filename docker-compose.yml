@@ -9,7 +9,7 @@ services:
       - TYPO3_DB_PASSWORD=typo3_password
       - TYPO3_DB_NAME=typo3
     volumes:
-      - ./typo3:/var/www/html
+      - ./src:/var/www/html
     depends_on:
       - db
 
